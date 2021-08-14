@@ -55,15 +55,15 @@ function Snake() {
   let snakeCanvas = table.getContext('2d');
   let hz_position = randomNumber(table.width, 'Snake'), vt_position = randomNumber(table.height, 'Snake');
   this.body = [{h: hz_position, v: vt_position}],
+  this.direction = {
+    hd: 10,
+    vd: 0,
+  },
   this.appearance = function(obj) {
     snakeCanvas.beginPath();
     snakeCanvas.fillStyle = 'grey';
     snakeCanvas.fillRect(obj.h, obj.v, 10, 10);
     snakeCanvas.closePath();
-  }
-  this.direction = {
-    hd: 10,
-    vd: 0,
   },
   this.add = function() {
     let newHead = {
